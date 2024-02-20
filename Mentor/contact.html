@@ -33,57 +33,19 @@
 
 <body>
 
-  <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"></script>
-
-  <script>
-    function enviarEmail(event) {
-      event.preventDefault();
-
-      var nome = document.getElementById("name").value;
-      var email = document.getElementById("email").value;
-      var assunto = document.getElementById("subject").value;
-      var mensagem = document.getElementById("message").value;
-
-      var emailData = {
-        service_id: "service_p3zylr4",
-        template_id: 'template_40an9xm', // Substitua pelo ID do seu modelo de e-mail no EmailJS
-        user_id: 'DiMMYIIFfkgEAzdZ_', // Substitua pelo seu User ID do EmailJS
-        template_params: {
-          "nome": nome,
-          "email": email,
-          "assunto": assunto,
-          "mensagem": mensagem
-        }
-      };
-
-      emailjs.send(emailData.service_id, emailData.template_id, emailData.template_params, emailData.user_id)
-        .then(function(response) {
-          console.log("E-mail enviado com sucesso:", response);
-          // Adicione aqui qualquer lógica adicional após o envio bem-sucedido
-          alert("Sua mensagem foi enviada. Obrigado!");
-        }, function(error) {
-          console.log("Erro ao enviar e-mail:", error);
-          // Adicione aqui qualquer lógica adicional em caso de erro no envio
-          alert("Erro ao enviar a mensagem. Por favor, tente novamente mais tarde.");
-        });
-    }
-  </script>
-
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
 
       <h1 class="logo me-auto"><a href="index.html">P2P UNIVESP</a></h1>
 
-
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-		  <li><a class="active" href="index.html">Home</a></li>
+          <li><a class="active" href="index.html">Home</a></li>
           <li><a href="about.html">Sobre</a></li>
           <li><a href="courses.html">Cursos</a></li>
           <li><a href="trainers.html">Time técnico</a></li>
           <li><a href="events.html">Eventos</a></li>
-        
 
           <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -125,7 +87,9 @@
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div data-aos="fade-up">
-        <iframe style="border:0; width: 100%; height: 350px;" <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14625.765063802524!2d-45.34085370120599!3d-23.588502495629882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd6126dfa80985%3A0x657fc9c66b0ac6be!2sPraia%20do%20Massagua%C3%A7u!5e0!3m2!1spt-BR!2sbr!4v1701258914507!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </iframe>
+        <iframe style="border:0; width: 100%; height: 350px;" <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14625.765063802524!2d-45.34085370120599!3d-23.588502495629882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd6126dfa80985%3A0x657fc9c66b0ac6be!2sPraia%20do%20Massagua%C3%A7u!5e0!3m2!1spt-BR!2sbr!4v1701258914507!5m2!1spt-BR!2sbr"
+          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> </iframe>
       </div>
 
       <div class="container" data-aos="fade-up">
@@ -158,7 +122,7 @@
 
           <div class="col-lg-8 mt-5 mt-lg-0">
 
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+            <form onsubmit="enviarEmail(event)">
               <div class="row">
                 <div class="col-md-6 form-group">
                   <input type="text" name="name" class="form-control" id="name" placeholder="Seu Nome" required>
@@ -171,12 +135,12 @@
                 <input type="text" class="form-control" name="subject" id="subject" placeholder="Assunto" required>
               </div>
               <div class="form-group mt-3">
-                <textarea class="form-control" name="message" rows="5" placeholder="Mensagem" required></textarea>
+                <textarea class="form-control" name="message" id="message" rows="5" placeholder="Mensagem" required></textarea>
               </div>
               <div class="my-3">
-                <div class="loading">Loading</div>
+                <div class="loading">Enviar</div>
                 <div class="error-message"></div>
-                <div class="sent-message">Sua mensagem foi enviada. Obrigado!</div>
+                <div class="sent-message">Coloque no assunto de desejar ser um parceiro ou receber mentoria </div>
               </div>
               <div class="text-center"><button type="submit">Enviar Mensagem</button></div>
             </form>
@@ -275,7 +239,12 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
   
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
   <script>
+    (function() {
+      emailjs.init("Gmail");
+    })();
+    
     function enviarEmail(event) {
       event.preventDefault();
 
@@ -287,12 +256,12 @@
       var emailData = {
         service_id: "service_p3zylr4",
         template_id: 'template_jxhii44', // Substitua pelo ID do seu modelo de e-mail no EmailJS
-        user_id: 'DiMMYIIFfkgEAzdZ_', // Substitua pelo seu User ID do EmailJS
+        user_id: 'DiMMYIIFfkgEAzdZ_', // Substitua pelo seu User ID do EmailJS,
         template_params: {
-          "nome": nome,
-          "email": email,
-          "assunto": assunto,
-          "mensagem": mensagem
+		"name": nome,
+		"email": email,
+		"subject": assunto,
+		"message": mensagem
         }
       };
 
@@ -308,7 +277,5 @@
         });
     }
   </script>
-
 </body>
-
 </html>
