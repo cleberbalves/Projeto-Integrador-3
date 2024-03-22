@@ -402,10 +402,11 @@ h6 {
 #hero {
   width: 100%;
   height: 80vh;
-  background: url(assets\img\univesp-2.jpg) top center;
+  background: url("https://assets.univesp.br/fundo_teams/fundo_teams_1.jpg") top center;
   background-size: cover;
   position: relative;
 }
+
 
 #hero:before {
   content: "";
@@ -418,20 +419,20 @@ h6 {
 }
 
 #hero .container {
-  padding-top: 72px;
+  padding-top: 52px;
 }
 
 @media (max-width: 992px) {
   #hero .container {
-    padding-top: 62px;
+    padding-top: 82px;
   }
 }
 
 #hero h1 {
   margin: 0;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 56px;
+  font-size: 38px;
+  font-weight: 500;
+  line-height: 66px;
   color: #fff;
   font-family: "Poppins", sans-serif;
 }
