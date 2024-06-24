@@ -147,11 +147,11 @@ h6 {
 * Get Startet Button 
 */
 .get-started-btn {
-  margin-left: 22px;
+  margin-left: 11px;
   background: #FF0000;
   color: #fff;
   border-radius: 50px;
-  padding: 8px 25px;
+  padding: 8px 20px;
   white-space: nowrap;
   transition: 0.3s;
   font-size: 14px;
@@ -197,13 +197,18 @@ h6 {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0 10px 30px;
+  padding: 5px 15px;
   font-family: "Poppins", sans-serif;
   font-size: 15px;
   font-weight: 500;
   color: #37423b;
   white-space: nowrap;
   transition: 0.3s;
+}
+
+.linksuteis {
+  color: #FF0000;
+  cursor: pointer;
 }
 
 .navbar a i,
@@ -302,6 +307,13 @@ h6 {
   color: #fff;
 }
 
+@media (max-width: 1366px) {
+  .mobile-nav-toggle.bi-x {
+    color: #fff;
+    display: block;
+  }
+}
+
 @media (max-width: 991px) {
   .mobile-nav-toggle {
     display: block;
@@ -384,6 +396,7 @@ h6 {
 
 .navbar-mobile .dropdown ul a i {
   font-size: 12px;
+  transform: rotate(90deg);
 }
 
 .navbar-mobile .dropdown ul a:hover,
